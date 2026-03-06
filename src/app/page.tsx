@@ -172,7 +172,23 @@ export default function Home() {
             <a href="#contact" className="md:inline-flex inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold">Work with me →</a>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[1,2,3].map((n) => (
+            {/* Featured: Valentine Day */}
+            <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-slate-200 overflow-hidden transition-shadow">
+              <div className="h-48 bg-gradient-to-r from-pink-300 via-fuchsia-300 to-indigo-300" />
+              <div className="p-7">
+                <h3 className="font-bold text-slate-800 mb-2">Valentine Day</h3>
+                <p className="text-slate-600 text-sm mb-4">
+                  A playful microsite that counts down to Valentine’s Day and displays curated love quotes.
+                  Built with modern web fundamentals for fast loads and delightful UI.
+                </p>
+                <div className="flex gap-4 text-sm">
+                  <a className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-md bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 transition-colors" href="https://valentine-day-eosin-one.vercel.app" target="_blank" rel="noopener noreferrer">Live →</a>
+                  <a className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-md bg-violet-50 text-violet-700 hover:bg-violet-100 border border-violet-200 transition-colors" href="https://github.com/ozavizcodes/ValentineDay" target="_blank" rel="noopener noreferrer">Code →</a>
+                </div>
+              </div>
+            </div>
+
+            {[1,2].map((n) => (
               <div key={n} className="bg-white rounded-2xl shadow-sm hover:shadow-lg border border-slate-200 overflow-hidden transition-shadow">
                 <div className="h-48 bg-gradient-to-br from-indigo-400 via-violet-400 to-blue-400" />
                 <div className="p-7">
