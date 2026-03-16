@@ -4,21 +4,29 @@ const StorySection = () => (
   <SectionShell
     id="about"
     eyebrow="My story"
-    title="From tinkering with UIs to shipping products."
-    subtitle="A quick snapshot of how I grew from curious builder to product-focused engineer."
+    title="From figuring it out to shipping real products."
+    subtitle="How I went from learning in public to building tools for real people, teams, and patients."
   >
     <div className="grid gap-8 md:grid-cols-2">
       <div className="space-y-4 text-sm text-slate-300">
         <p>
-          I found my way into software by trying to make interfaces feel a
-          little less clunky and a little more intuitive. What started as
-          experiments in the browser quickly turned into a love for frontend
-          architecture and UX.
+          I didn&apos;t start with a big formal program or a huge team around
+          me. My first real project was a job listing app for Job.myXalary,
+          where I was handed a Figma file, some requirements, and a senior
+          engineer who preferred not to be pinged every five minutes. From
+          there, I learned to read between the lines of designs, ask focused
+          questions, and slowly turn ideas into working React and Node.js
+          features that real candidates and hiring teams could use.
         </p>
         <p>
-          Since then, I&apos;ve worked across stacks, but my sweet spot is where
-          product, design, and engineering meet—translating ideas into
-          experiences that are fast, accessible, and maintainable.
+          Since then, I&apos;ve worked on connected HR systems at NotchHR and a
+          full telemedicine platform that serves patients, clinicians, and
+          admins. It hasn&apos;t all been smooth—there&apos;s been a lot of
+          debugging, learning, and starting over—but I genuinely enjoy that
+          process: understanding a problem, thinking through the edge cases, and
+          finally seeing people use the thing we built. That mix of ownership,
+          collaboration, and real‑world impact is what keeps me excited about
+          software development. 
         </p>
       </div>
       <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-300">
@@ -26,9 +34,10 @@ const StorySection = () => (
           Things that guide my work:
         </p>
         <ul className="space-y-2 list-disc pl-4">
-          <li>Design APIs for components as carefully as backend APIs.</li>
-          <li>Ship iteratively, measure impact, and refine.</li>
-          <li>Prefer clarity over cleverness in code and UI.</li>
+          <li>Start from real users, not just the UI.</li>
+          <li>Ask better questions instead of getting stuck.</li>
+          <li>Prefer clarity, reliability, and maintainability over cleverness.</li>
+          <li>Ship, observe, and keep improving the experience.</li>
         </ul>
       </div>
     </div>

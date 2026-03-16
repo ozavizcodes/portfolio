@@ -19,7 +19,7 @@ const Hero = () => {
             transition={{ delay: 0.1 }}
             className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-300"
           >
-            Software Engineer / Developer
+            Software Engineer / Full Stack Developer
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -39,9 +39,9 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="max-w-xl text-sm text-slate-300 md:text-base"
           >
-            I help teams turn fuzzy product ideas into interfaces that feel
-            polished, reliable, and fast — from the first wireframe to the last
-            micro-interaction.
+            I’m a React + TypeScript and Node.js developer who loves turning
+            messy real‑world requirements into reliable tools — from job boards
+            and HR systems to full telemedicine platforms.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -72,7 +72,7 @@ const Hero = () => {
         >
           <div className="relative h-56 w-56 overflow-hidden rounded-full border border-cyan-500/40 bg-slate-900/80 shadow-2xl md:h-64 md:w-64">
             <img
-              src="/profile-fun.png"
+              src="/profile.jpg"
               alt="Faith Abraham"
               loading="lazy"
               className="h-full w-full object-cover"
