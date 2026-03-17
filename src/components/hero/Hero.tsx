@@ -39,9 +39,10 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="max-w-xl text-sm text-slate-300 md:text-base"
           >
-            I’m a React + TypeScript and Node.js developer who loves turning
-            messy real‑world requirements into reliable tools — from job boards
-            and HR systems to full telemedicine platforms.
+            My name is Faith Abraham. I’m a React + TypeScript and Node.js
+            developer who loves turning messy real‑world requirements into
+            reliable tools—from job boards and HR systems to full telemedicine
+            platforms.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
