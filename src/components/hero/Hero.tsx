@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Hero = () => {
+  const [imageError, setImageError] = useState(false);
+  const profileAlt = "Faith Abraham";
+
   return (
     <section
       id="hero"
@@ -71,13 +75,27 @@ const Hero = () => {
           transition={{ delay: 0.35 }}
           className="flex flex-1 justify-center md:justify-end"
         >
-          <div className="relative h-56 w-56 overflow-hidden rounded-full border border-cyan-500/40 bg-slate-900/80 shadow-2xl md:h-64 md:w-64">
-            <img
-              src="/profile.jpg"
-              alt="Faith Abraham"
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
+          <div className="relative h-48 w-48 overflow-hidden rounded-full border border-cyan-500/40 bg-slate-900/80 shadow-2xl md:h-56 md:w-56">
+            {!imageError ? (
+              <img
+                src="/profile.jpg"
+                alt={profileAlt}
+                loading="lazy"
+                className="h-full w-full object-cover"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div
+                role="img"
+                aria-label={profileAlt}
+                className="flex h-full w-full flex-col items-center justify-center gap-2 bg-slate-900 text-center"
+              >
+                <span className="text-3xl font-semibold tracking-wide text-cyan-300">
+                  FA
+                </span>
+                <span className="px-4 text-sm text-slate-300">{profileAlt}</span>
+              </div>
+            )}
             <div className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-cyan-400/40" />
           </div>
         </motion.div>
