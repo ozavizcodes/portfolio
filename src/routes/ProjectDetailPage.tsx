@@ -2,7 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 
 type Section = {
   heading: string;
-  body: string;
+  body?: string;
+  bullets?: string[];
 };
 
 type ProjectDetail = {
@@ -27,12 +28,26 @@ const projects: Record<string, ProjectDetail> = {
       {
         heading: "What I Worked On",
         body:
-          "I helped build three React + TypeScript frontends (patient, doctor, admin) and contributed to a NestJS backend. My work covered real‑time consultation flows, structured clinical documentation (SOAP notes, ICD‑10), scheduling, and secure authentication/authorization.",
+          "I helped build three React + TypeScript frontends (patient, doctor, admin) and contributed to a NestJS backend. My work covered real-time consultation flows, structured clinical documentation (SOAP notes, ICD-10), scheduling, secure authentication/authorization, and the integration points for third-party video sessions.",
       },
       {
         heading: "How It Works",
         body:
           "Patients onboard, answer triage questions, book appointments, and join secure chat/video sessions. Doctors work in a consultation workspace with patient history, vitals, and rich notes. Admins manage users, configurations, and analytics, with strong logging and audit trails.",
+      },
+      {
+        heading: "Zoom SDK (Third-Party Video Chat)",
+        body:
+          "Integrated Zoom SDK to deliver reliable in-app video consultations, with careful handling of the meeting lifecycle and device permissions.",
+        bullets: [
+          "Embedded/configured Zoom SDK in the React UI and wired up meeting controls (join/leave, mute/unmute).",
+          "Handled the meeting lifecycle with real-time state (connecting, in-meeting, ended) and user-friendly fallbacks.",
+          "Managed permission flows (camera/mic) and device selection so users could start sessions with minimal friction.",
+          "Built robust error handling for SDK failures (network drops, token/session issues) including retries and graceful recovery.",
+          "Designed integration boundaries where the frontend requests secure session tokens and the backend (NestJS) issues/validates them.",
+          "Implemented event handling for SDK callbacks (presence changes, session end, media status) to keep UI and backend in sync.",
+          "Focused on responsive layout for video tiles and controls so consultations work across screen sizes.",
+        ],
       },
     ],
   },
@@ -114,7 +129,7 @@ const ProjectDetailPage = () => {
   const project = slug ? projects[slug] : undefined;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
       <button
         type="button"
         onClick={() => navigate(-1)}
@@ -131,7 +146,9 @@ const ProjectDetailPage = () => {
           <p className="mt-1 text-xs font-medium text-cyan-300">
             {project.role}
           </p>
-          <p className="mt-4 text-sm text-slate-300">{project.intro}</p>
+          <p className="mt-4 break-words text-sm text-slate-300">
+            {project.intro}
+          </p>
 
           <div className="mt-8 space-y-6">
             {project.sections.map((section) => (
@@ -139,7 +156,20 @@ const ProjectDetailPage = () => {
                 <h2 className="text-sm font-semibold text-slate-100">
                   {section.heading}
                 </h2>
-                <p className="text-sm text-slate-300">{section.body}</p>
+                {section.body && (
+                  <p className="break-words text-sm text-slate-300">
+                    {section.body}
+                  </p>
+                )}
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="list-disc space-y-1 pl-5 text-sm text-slate-300">
+                    {section.bullets.map((b) => (
+                      <li key={b} className="break-words">
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </section>
             ))}
           </div>

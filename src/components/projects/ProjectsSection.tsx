@@ -52,7 +52,7 @@ const ProjectsSection = () => (
             </h3>
             <p className="mt-1 text-xs text-cyan-300">{project.role}</p>
             <p className="mt-3 text-xs">{project.description}</p>
-            <div className="mt-4 flex flex-wrap gap-1 text-[11px]">
+            <div className="mt-4 flex flex-wrap gap-1 text-[11px] sm:text-xs">
               {project.tech.map((t) => (
                 <span
                   key={t}

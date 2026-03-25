@@ -7,7 +7,7 @@ const skillGroups = [
   },
   {
     title: "Backend",
-    items: ["Node.js", "REST APIs"],
+    items: ["NestJS", "Node.js", "REST APIs"],
   },
   {
     title: "DevOps & tooling",

@@ -2,19 +2,19 @@ import SectionShell from "../layout/SectionShell";
 
 const roles = [
   {
-    company: "Telemedicine Platform",
+    company: "Leadway Assurance Company",
     title: "Full‑Stack Engineer",
-    period: "2023 — Present",
+    period: "2024 — Present",
     bullets: [
-      "Built React + TypeScript frontends for patients, doctors, and admins on a telemedicine platform.",
+      "Built React + TypeScript frontends for patients, doctors, and admins on a secure virtual care platform.",
       "Contributed to a NestJS/Node backend with secure, schema‑validated APIs and real‑time consultations.",
       "Improved reliability and performance with better state management, caching, and observability.",
     ],
   },
   {
-    company: "NotchHR / myXalary",
+    company: "NochHr",
     title: "Frontend Engineer",
-    period: "2021 — 2023",
+    period: "2023 — 2024",
     bullets: [
       "Worked on recruitment tools that connect manager job requests, HR workflows, and public job listings.",
       "Extended a Job Roles & Competency module so each role carries reusable skill templates into new openings.",
@@ -23,8 +23,8 @@ const roles = [
   },
   {
     company: "Job.myXalary",
-    title: "Junior Frontend Engineer",
-    period: "2020 — 2021",
+    title: "Full Stack Engineer",
+    period: "2021 — 2023",
     bullets: [
       "Implemented candidate signup, profile, and job browsing flows in React from Figma designs and specs.",
       "Collaborated with a small team and contributed to Node.js APIs powering job listings and applications.",
