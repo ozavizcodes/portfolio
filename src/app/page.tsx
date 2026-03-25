@@ -123,7 +123,14 @@ export default function Home() {
             {/* Right: photo placeholder */}
             <div className="flex justify-center md:justify-end">
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-indigo-400 via-violet-400 to-blue-400 shadow-2xl overflow-hidden">
-                <Image src="/profile.jpg" alt="Profile photo" fill className="object-cover" priority sizes="(max-width: 768px) 16rem, 18rem" />
+                <Image
+                  src="/profile.jpg"
+                  alt="Profile photo"
+                  fill
+                  className="object-cover object-[50%_15%]"
+                  priority
+                  sizes="(max-width: 768px) 16rem, 18rem"
+                />
               </div>
             </div>
           </div>

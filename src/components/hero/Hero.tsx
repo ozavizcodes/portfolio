@@ -75,13 +75,13 @@ const Hero = () => {
           transition={{ delay: 0.35 }}
           className="flex flex-1 justify-center md:justify-end"
         >
-          <div className="relative h-48 w-48 overflow-hidden rounded-full border border-cyan-500/40 bg-slate-900/80 shadow-2xl md:h-56 md:w-56">
+          <div className="relative h-56 w-56 overflow-hidden rounded-full border border-cyan-500/40 bg-slate-900/80 shadow-2xl md:h-64 md:w-64">
             {!imageError ? (
               <img
                 src="/profile.jpg"
                 alt={profileAlt}
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[50%_15%]"
                 onError={() => setImageError(true)}
               />
             ) : (
