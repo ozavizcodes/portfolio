@@ -23,6 +23,7 @@ const ContactSection = () => {
             const name = String(formData.get("name") ?? "").trim();
             const email = String(formData.get("email") ?? "").trim();
             const message = String(formData.get("message") ?? "").trim();
+            const website = String(formData.get("website") ?? "").trim();
 
             if (!name || !email || !message) {
               setStatus("Please fill in all fields.");
@@ -35,7 +36,7 @@ const ContactSection = () => {
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, email, message }),
+                body: JSON.stringify({ name, email, message, website }),
               });
 
               const data = (await response.json()) as {
@@ -81,6 +82,16 @@ const ContactSection = () => {
               className="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
               rows={4}
               required
+            />
+          </div>
+          <div className="hidden" aria-hidden>
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
             />
           </div>
           <button
