@@ -1,2 +1,4 @@
 @import "tailwindcss";
 
+/* Theme mode is controlled by ThemeContext, not by the visitor's OS setting. */
+@custom-variant dark (&:where(.dark, .dark *));

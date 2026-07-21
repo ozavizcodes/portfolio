@@ -1,40 +1,19 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import PageTransition from "../components/layout/PageTransition";
 import ThemeProvider, { useTheme } from "../context/ThemeContext";
 
 const Shell = () => {
-  const { theme } = useTheme();
   const location = useLocation();
+  const { theme } = useTheme();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
 
-  const base = "min-h-screen transition-colors duration-300";
-  const scheme =
-    theme === "dark"
-      ? "bg-slate-950 text-slate-50"
-      : "bg-slate-50 text-slate-900";
-
-  return (
-    <div className={`${base} ${scheme}`}>
-      <Navbar />
-      <main className="pt-20">
-        <AnimatePresence mode="wait">
-          <PageTransition key={location.pathname}>
-            <Outlet />
-          </PageTransition>
-        </AnimatePresence>
-      </main>
-      <Footer />
-    </div>
-  );
+  return <div className={theme === "dark" ? "min-h-screen bg-slate-950 text-white" : "min-h-screen bg-white text-slate-950"}><Navbar /><main className="pt-20"><AnimatePresence mode="wait"><PageTransition key={location.pathname}><Outlet /></PageTransition></AnimatePresence></main><Footer /></div>;
 };
 
-const RootLayout = () => (
-  <ThemeProvider>
-    <Shell />
-  </ThemeProvider>
-);
-
-export default RootLayout;
-
+export default function RootLayout() { return <ThemeProvider><Shell /></ThemeProvider>; }
